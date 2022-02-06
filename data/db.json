@@ -1,0 +1,75 @@
+{
+  "decks": [
+    {
+      "id": 1,
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation."
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2
+    },
+    {
+      "name": "Pasta",
+      "description": "Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.",
+      "id": 3
+    }
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "front": "Differentiate between Real DOM and Virtual DOM.",
+      "back": "Virtual DOM updates are faster but do not directly update the HTML",
+      "deckId": 1
+    },
+    {
+      "id": 2,
+      "front": "How do you modify the state of a different React component?",
+      "back": "Not at all! State is visible to the component only.",
+      "deckId": 1
+    },
+    {
+      "id": 3,
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or props",
+      "deckId": 1
+    },
+    {
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
+      "deckId": 2,
+      "id": 4
+    },
+    {
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route> ",
+      "deckId": 2,
+      "id": 5
+    },
+    {
+      "front": "Ditalini Pasta",
+      "back": "Medium-sized, very short tubes with smooth sides. Like most short pasta shapes, ditali are excellent used in soups, pasta salads, and to stand up to chunky sauces.",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "Bucatini Pasta",
+      "back": "These long, hollow spaghetti-like tubes (aka perciatelli) are unusual and fun! Try them in casseroles or Asian stir-fries, or tossed with a fresh tomato sauce.",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "Angel Hair Pasta",
+      "back": "The long, delicate strands of angel hair pasta (aka capellini) are best served in light or creamy sauces. The thin strands can go M.I.A. in chunky, meaty sauces.",
+      "deckId": 3,
+      "id": 10
+    },
+    {
+      "front": "Egg Noodles",
+      "back": "These noodles add heartiness to soups, stews, and casseroles, and their flat shape makes them the ideal vehicle for cream sauces.",
+      "deckId": 3,
+      "id": 11
+    }
+  ]
+}
