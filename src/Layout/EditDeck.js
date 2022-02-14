@@ -10,9 +10,9 @@ function EditDeck() {
     const params = useParams();
     const history = useHistory();
   
+    const deckId = params.deckId;
     useEffect(() => {
       const abortController = new AbortController();
-      const deckId = params.deckId;
   
       async function getCurrentDeck() {
         try {
@@ -32,7 +32,7 @@ function EditDeck() {
       getCurrentDeck();
   
       return () => abortController.abort();
-    }, []);
+    }, [deckId]);
 
   return (
     <div>

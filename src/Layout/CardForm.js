@@ -24,37 +24,30 @@ function CardForm({ deckId, saveCard, currentCard = { front: "", back: "" } }) {
       setFormData({ ...currentCard });
     }
   };
-
+  const inputList = [
+    { position: "front", placeholder: "Front side of card" },
+    { position: "back", placeholder: "Back side of card" },
+  ];
   return (
     <form onSubmit={handleSubmit}>
-      <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
-          Front
-        </label>
-        <textarea
-          value={formData.front}
-          id="front"
-          name="front"
-          type="text"
-          className="form-control"
-          placeholder="Front side of card"
-          onChange={handleChange}
-        />
-      </div>
-      <div className="mb-3">
-        <label htmlFor="exampleInputPassword1" className="form-label">
-          Back
-        </label>
-        <textarea
-          value={formData.back}
-          id="back"
-          name="back"
-          type="text"
-          className="form-control"
-          placeholder="Back side of card"
-          onChange={handleChange}
-        />
-      </div>
+      {inputList.map((listItem, index) => {
+        return (
+          <div className="mb-3" key={index}>
+            <label htmlFor={listItem.position} className="form-label">
+              Front
+            </label>
+            <textarea
+              value={formData[listItem.position]}
+              id={listItem.position}
+              name={listItem.position}
+              type="text"
+              className="form-control"
+              placeholder={listItem.placeholder}
+              onChange={handleChange}
+            />
+          </div>
+        );
+      })}
       <Link to={`/decks/${deckId}`}>
         <button type="button" className="btn btn-secondary">
           {currentCard.id ? "Cancel" : "Done"}

@@ -9,9 +9,9 @@ function EditCard() {
   const [currentCard, setCurrentCard] = useState({ front: "", back: "" });
   const params = useParams();
 
+  const deckId = params.deckId; //
   useEffect(() => {
     const abortController = new AbortController();
-    const deckId = params.deckId;
 
     async function getCurrentDeck() {
       try {
@@ -31,11 +31,11 @@ function EditCard() {
     getCurrentDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
+  const cardId = params.cardId; //
   useEffect(() => {
     const abortController = new AbortController();
-    const cardId = params.cardId;
 
     async function getCurrentCard() {
       try {
@@ -55,7 +55,7 @@ function EditCard() {
     getCurrentCard();
 
     return () => abortController.abort();
-  }, []);
+  }, [cardId]);
 
   return (
     <>

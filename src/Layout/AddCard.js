@@ -8,9 +8,9 @@ function AddCard() {
   const [currentDeck, setCurrentDeck] = useState({ name: "...", cards: [] });
   const params = useParams();
 
+  const deckId = params.deckId; //
   useEffect(() => {
     const abortController = new AbortController();
-    const deckId = params.deckId;
 
     async function getCurrentDeck() {
       try {
@@ -30,7 +30,7 @@ function AddCard() {
     getCurrentDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   return (
     <React.Fragment>

@@ -8,9 +8,9 @@ function Deck() {
   const params = useParams();
   const history = useHistory();
 
+  const deckId = params.deckId;
   useEffect(() => {
     const abortController = new AbortController();
-    const deckId = params.deckId;
 
     async function getCurrentDeck() {
       try {
@@ -30,7 +30,7 @@ function Deck() {
     getCurrentDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   async function handleDeckDelete(event) {
     const targetDeck = event.target.value;

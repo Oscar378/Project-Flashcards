@@ -19,9 +19,9 @@ function Study() {
   const history = useHistory();
   const cardList = currentDeck.cards;
 
+  const deckId = params.deckId;
   useEffect(() => {
     const abortController = new AbortController();
-    const deckId = params.deckId;
 
     async function getCurrentDeck() {
       try {
@@ -41,7 +41,7 @@ function Study() {
     getCurrentDeck();
 
     return () => abortController.abort();
-  }, []);
+  }, [deckId]);
 
   function flipClickHandler() {
     setCardInfo({
